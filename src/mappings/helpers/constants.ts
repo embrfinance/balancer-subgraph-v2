@@ -23,6 +23,7 @@ export class AddressByNetwork {
   public fuji: string;
   public fantom: string;
   public arbitrum: string;
+  public avalanche: string;
   public dev: string;
 }
 
@@ -34,10 +35,11 @@ let vaultAddressByNetwork: AddressByNetwork = {
   goerli: '0x65748E8287Ce4B9E6D83EE853431958851550311',
   rinkeby: '0xF07513C68C55A31337E3b58034b176A15Dce16eD',
   polygon: '0xBA12222222228d8Ba445958a75a0704d566BF2C8',
-  fuji: '0x99DFAd1c64edBab922C0b9a490212a1fF53a04b6',
+  fuji: '0x9aed52F3074ba468c6ad17822b8833210868c31b',
   arbitrum: '0xBA12222222228d8Ba445958a75a0704d566BF2C8',
   dev: '0xa0B05b20e511B1612E908dFCeE0E407E22B76028',
   fantom: '0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce',
+  avalanche: ''
 };
 
 let wethAddressByNetwork: AddressByNetwork = {
@@ -46,10 +48,11 @@ let wethAddressByNetwork: AddressByNetwork = {
   goerli: '0x9A1000D492d40bfccbc03f413A48F5B6516Ec0Fd',
   rinkeby: '0x80dD2B80FbcFB06505A301d732322e987380EcD6',
   polygon: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
-  fuji: '0xfBD49f16d9fc6566aE41C20026DDCf3bADb6ba9F',
+  fuji: '0xd00ae08403B9bbb9124bB305C09058E32C39A48c',
   arbitrum: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
   dev: '0x4CDDb3505Cf09ee0Fa0877061eB654839959B9cd',
   fantom: '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83', //WFTM
+  avalanche: '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7'
 };
 
 let wbtcAddressByNetwork: AddressByNetwork = {
@@ -62,6 +65,7 @@ let wbtcAddressByNetwork: AddressByNetwork = {
   arbitrum: '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
   dev: '0xcD80986f08d776CE41698c47f705CDc99dDBfB0A',
   fantom: '0x321162Cd933E2Be498Cd2267a90534A804051b11',
+  avalanche: ''
 };
 
 let usdAddressByNetwork: AddressByNetwork = {
@@ -74,6 +78,7 @@ let usdAddressByNetwork: AddressByNetwork = {
   arbitrum: '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
   dev: '0x1528f3fcc26d13f7079325fb78d9442607781c8c',
   fantom: '0x04068da6c83afcfa0e13ba15a6696662335d5b75',
+  avalanche: ''
 };
 
 let usdcAddressByNetwork: AddressByNetwork = {
@@ -82,10 +87,11 @@ let usdcAddressByNetwork: AddressByNetwork = {
   goerli: '0x78dEca24CBa286C0f8d56370f5406B48cFCE2f86',
   rinkeby: '0x70b55Af71B29c5Ca7e67bD1995250364C4bE5554',
   polygon: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
-  fuji: '0x0a35823b2C0a025D97e4002aec5038b96087942D',
+  fuji: '0xfb8fa9f5f0bd47591ba6f7c75fe519e3e8fde429',
   arbitrum: '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
   dev: '0x7c0c5AdA758cf764EcD6bAC05b63b2482f90bBB2',
   fantom: '0x04068da6c83afcfa0e13ba15a6696662335d5b75',
+  avalanche: ''
 };
 
 let balAddressByNetwork: AddressByNetwork = {
@@ -94,10 +100,11 @@ let balAddressByNetwork: AddressByNetwork = {
   goerli: '0x78dEca24CBa286C0f8d56370f5406B48cFCE2f86',
   rinkeby: '0x8850Fd0C65d9B2B168153FAc6bAa269A566c4ef7',
   polygon: '0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3',
-  fuji: '0x9c2eE4065F5BcaF2220c6eA788829eEd80aec503',
+  fuji: '0xe7a282dA986F01dE6677250C90cE22A819CE9a9d',
   arbitrum: '0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8',
   dev: '0xf702269193081364E355f862f2CFbFCdC5DB738C',
   fantom: '0xf24bcf4d1e507740041c9cfd2dddb29585adce1e', //BEETS
+  avalanche: ''
 };
 
 let daiAddressByNetwork: AddressByNetwork = {
@@ -106,10 +113,11 @@ let daiAddressByNetwork: AddressByNetwork = {
   goerli: '0x78dEca24CBa286C0f8d56370f5406B48cFCE2f86',
   rinkeby: '0x12c615406F20eDcBDa50888f9fd6734dC4836417',
   polygon: '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
-  fuji: '0x510CD68b4Bdd8cd2fd6e93afe368F0F4e17791F8',
+  fuji: '0x4b20b17bdb9991a8549f5ceb8bd813419e537209',
   arbitrum: '0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1',
   dev: '0x5C0E66606eAbEC1df45E2ADd26C5DF8C0895a397',
   fantom: '0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e',
+  avalanche: ''
 };
 
 function forNetwork(addressByNetwork: AddressByNetwork, network: string): Address {
@@ -128,6 +136,8 @@ function forNetwork(addressByNetwork: AddressByNetwork, network: string): Addres
   } else if (network == 'fantom') {
     return Address.fromString(addressByNetwork.fantom);
   } else if (network == 'arbitrum-one') {
+    return Address.fromString(addressByNetwork.arbitrum);
+  } else if (network == 'avalanche') {
     return Address.fromString(addressByNetwork.arbitrum);
   } else {
     return Address.fromString(addressByNetwork.dev);
