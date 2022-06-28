@@ -1,4 +1,4 @@
-import { Address, BigDecimal, BigInt, ethereum } from '@graphprotocol/graph-ts';
+import { Address, BigDecimal, BigInt, ethereum, log } from '@graphprotocol/graph-ts';
 import {
   Balancer,
   BalancerSnapshot,
@@ -326,8 +326,17 @@ export function updateTokenBalances(
     let latestPrice = LatestPrice.load(latestPriceId);
 
     if (latestPrice) {
-      token.totalBalanceUSD = token.totalBalanceNotional.times(latestPrice.priceUSD);
-      token.totalVolumeUSD = token.totalVolumeUSD.plus(notionalBalance.times(latestPrice.priceUSD));
+      if(tokenAddress == Address.fromString("0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7"))
+      {
+        const highestPriceForAvax = BigDecimal.fromString('500')
+        if (latestPrice.priceUSD.le(highestPriceForAvax)) { 
+          token.totalBalanceUSD = token.totalBalanceNotional.times(latestPrice.priceUSD);
+          token.totalVolumeUSD = token.totalVolumeUSD.plus(notionalBalance.times(latestPrice.priceUSD));
+        }
+      } else { 
+        token.totalBalanceUSD = token.totalBalanceNotional.times(latestPrice.priceUSD);
+        token.totalVolumeUSD = token.totalVolumeUSD.plus(notionalBalance.times(latestPrice.priceUSD));
+      }
     }
   }
 

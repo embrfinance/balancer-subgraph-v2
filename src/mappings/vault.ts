@@ -307,6 +307,9 @@ export function handleSwapEvent(event: SwapEvent): void {
       tokenInSwapValueUSD.gt(ZERO_BD) && tokenOutSwapValueUSD.gt(ZERO_BD) ? BigDecimal.fromString('2') : ONE_BD;
     swapValueUSD = tokenInSwapValueUSD.plus(tokenOutSwapValueUSD).div(divisor);
   }
+  
+  //}
+
 
   let swapId = transactionHash.toHexString().concat(logIndex.toString());
   let swap = new Swap(swapId);
@@ -388,6 +391,7 @@ export function handleSwapEvent(event: SwapEvent): void {
     let tokenPriceId = getTokenPriceId(poolId.toHex(), tokenOutAddress, tokenInAddress, block);
     let tokenPrice = new TokenPrice(tokenPriceId);
     //tokenPrice.poolTokenId = getPoolTokenId(poolId, tokenOutAddress);
+   
     tokenPrice.poolId = poolId.toHexString();
     tokenPrice.block = block;
     tokenPrice.timestamp = blockTimestamp;
@@ -405,7 +409,6 @@ export function handleSwapEvent(event: SwapEvent): void {
     }
 
     tokenPrice.priceUSD = valueInUSD(tokenPrice.price, tokenInAddress);
-
     tokenPrice.save();
 
     updatePoolLiquidity(poolId.toHex(), block, tokenInAddress, blockTimestamp);
@@ -431,7 +434,6 @@ export function handleSwapEvent(event: SwapEvent): void {
     }
 
     tokenPrice.priceUSD = valueInUSD(tokenPrice.price, tokenOutAddress);
-
     tokenPrice.save();
 
     updatePoolLiquidity(poolId.toHex(), block, tokenOutAddress, blockTimestamp);

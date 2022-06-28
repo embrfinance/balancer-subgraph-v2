@@ -1,16 +1,16 @@
 specVersion: 0.0.2
-description: Beethoven X is a non-custodial portfolio manager, liquidity provider, and price sensor.
-repository: https://github.com/beethovenxfi/balancer-subgraph-v2
+description: Embr Finance is a non-custodial portfolio manager, liquidity provider, and price sensor.
+repository: https://github.com/embrfinance/embr-avalanche-v2
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Vault
-    network: mainnet
+    network: avalanche
     source:
-      address: '0x20dd72Ed959b6147912C2e529F0a0C651c33c9ce'
+      address: '0xad68ea482860cd7077a5D0684313dD3a9BC70fbB'
       abi: Vault
-      startBlock: 17433594
+      startBlock: 8169253
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -47,11 +47,11 @@ dataSources:
           handler: handleInternalBalanceChange
   - kind: ethereum/contract
     name: WeightedPoolFactory
-    network: mainnet
+    network: avalanche
     source:
-      address: '0x60467cb225092cE0c989361934311175f437Cf53'
+      address: '0x4250Cd9F2B02Ef0F9d8253dE5A2daC9174d9b620'
       abi: WeightedPoolFactory
-      startBlock: 16897200
+      startBlock: 8169253
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -74,11 +74,11 @@ dataSources:
           handler: handleNewWeightedPool
   - kind: ethereum/contract
     name: WeightedPool2TokenFactory
-    network: mainnet
+    network: avalanche
     source:
-      address: '0x92b377187bcCC6556FceD2f1e6DAd65850C20630'
+      address: '0x5bBF66875eA87E9cB80A9E13D03b1a29f5798eBc'
       abi: WeightedPoolFactory
-      startBlock: 16897244
+      startBlock: 8169253
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -101,11 +101,11 @@ dataSources:
           handler: handleNewWeightedPool
   - kind: ethereum/contract
     name: StablePoolFactory
-    network: mainnet
+    network: avalanche
     source:
-      address: '0x55df810876354Fc3e249f701Dd78DeDE57991F8D'
+      address: '0x62B5fa3bA999277a421174E70A47a7e677433368'
       abi: StablePoolFactory
-      startBlock: 16897287
+      startBlock: 8169253
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -128,11 +128,11 @@ dataSources:
           handler: handleNewStablePool
   - kind: ethereum/contract
     name: MetaStablePoolFactory
-    network: mainnet
+    network: avalanche
     source:
-      address: '0x70b55Af71B29c5Ca7e67bD1995250364C4bE5554'
+      address: '0xe02c06D8eaE867A42A8b25D589DeED126FE0f935'
       abi: MetaStablePoolFactory
-      startBlock: 16898079
+      startBlock: 8169253
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -155,11 +155,11 @@ dataSources:
           handler: handleNewMetaStablePool
   - kind: ethereum/contract
     name: LiquidityBootstrappingPoolFactory
-    network: mainnet
+    network: avalanche
     source:
-      address: '0x458368B3724B5a1c1057A00b28eB03FEb5b64968'
+      address: '0xB0a615386E7746181ea56272C8414e67613493e4'
       abi: LiquidityBootstrappingPoolFactory
-      startBlock: 16897962
+      startBlock: 8169253
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -185,7 +185,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: WeightedPool
-    network: mainnet
+    network: avalanche
     source:
       abi: WeightedPool
     mapping:
@@ -210,7 +210,7 @@ templates:
           handler: handleSwapFeePercentageChange
   - kind: ethereum/contract
     name: StablePool
-    network: mainnet
+    network: avalanche
     source:
       abi: StablePool
     mapping:
@@ -241,7 +241,7 @@ templates:
           handler: handleAmpUpdateStopped
   - kind: ethereum/contract
     name: MetaStablePool
-    network: mainnet
+    network: avalanche
     source:
       abi: MetaStablePool
     mapping:
@@ -273,7 +273,7 @@ templates:
           handler: handlePriceRateCacheUpdated
   - kind: ethereum/contract
     name: LiquidityBootstrappingPool
-    network: mainnet
+    network: avalanche
     source:
       abi: LiquidityBootstrappingPool
     mapping:

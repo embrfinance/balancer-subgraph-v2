@@ -59,12 +59,14 @@ export function handleGradualWeightUpdateScheduled(event: GradualWeightUpdateSch
   let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString());
   let weightUpdate = new GradualWeightUpdate(id);
   weightUpdate.poolId = poolId.toHexString();
-  weightUpdate.scheduledTimestamp = event.block.timestamp.toI32();
-  weightUpdate.startTimestamp = event.params.startTime.toI32();
-  weightUpdate.endTimestamp = event.params.endTime.toI32();
-  weightUpdate.startWeights = event.params.startWeights;
-  weightUpdate.endWeights = event.params.endWeights;
-  weightUpdate.save();
+  //if (event.params.startTime.toString() <= "1000000000000") {
+  	weightUpdate.scheduledTimestamp = event.block.timestamp.toI32();
+  	weightUpdate.startTimestamp = event.params.startTime.toI32();
+  	weightUpdate.endTimestamp = event.params.endTime.toI32();
+  	weightUpdate.startWeights = event.params.startWeights;
+  	weightUpdate.endWeights = event.params.endWeights;
+  	weightUpdate.save();
+  //}
 }
 
 /************************************
